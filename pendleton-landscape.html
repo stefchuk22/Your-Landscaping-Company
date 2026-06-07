@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendleton Landscape — Sandy, UT Landscape Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --slate: #1c2630;
+  --slate-mid: #2e3f50;
+  --slate-light: #4a5f72;
+  --stone: #8c9daa;
+  --cream: #f5f2ec;
+  --cream-warm: #ede8df;
+  --cream-dark: #ddd7cc;
+  --sage: #6b8c6e;
+  --sage-deep: #3d5c40;
+  --sage-pale: #c8d9c9;
+  --gold: #b8923a;
+  --gold-pale: #e8d4a8;
+  --white: #ffffff;
+  --text-dark: #1a2028;
+  --text-mid: #3a4a58;
+  --text-muted: #6a7a88;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 4rem;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+nav.scrolled {
+  background: rgba(28, 38, 48, 0.97);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: 0.06em;
+}
+
+.nav-logo strong {
+  font-weight: 600;
+  color: var(--gold-pale);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold-pale); }
+
+.nav-cta {
+  border: 1px solid rgba(184, 146, 58, 0.6) !important;
+  color: var(--gold-pale) !important;
+  padding: 0.55rem 1.4rem;
+  transition: all 0.2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+  border-color: var(--gold) !important;
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5de43476f0b4d14870eac88b/1667601600-c90f-4a03-9d3c-7c0ad95aebb4/6.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+
+.hero-bg.loaded { transform: scale(1); }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(28, 38, 48, 0.88) 0%,
+    rgba(28, 38, 48, 0.6) 50%,
+    rgba(28, 38, 48, 0.2) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 4rem;
+  max-width: 680px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  animation: fadeUp 0.8s 0.2s both;
+}
+
+.eyebrow-line {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.eyebrow-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-pale);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s 0.35s both;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-pale);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s 0.5s both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.65s both;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  padding: 1rem 2.2rem;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.82rem;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+
+.btn-primary:hover {
+  background: var(--sage-deep);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { color: var(--white); border-color: rgba(255,255,255,0.7); }
+
+/* Hero scroll indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  animation: fadeUp 1s 1s both;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.scroll-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* Hero rating badge */
+.hero-badge {
+  position: absolute;
+  bottom: 3rem;
+  right: 4rem;
+  z-index: 2;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 1.2rem 1.5rem;
+  animation: fadeUp 0.8s 0.8s both;
+}
+
+.badge-rating {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+}
+
+.badge-stars {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.15rem;
+}
+
+.badge-label {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─── SERVICES STRIP ─── */
+.services-strip {
+  background: var(--slate);
+  padding: 1.25rem 4rem;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.strip-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 2rem;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+
+.strip-item:first-child { padding-left: 0; }
+.strip-dot { color: var(--gold); font-size: 0.6rem; }
+
+/* ─── INTRO SPLIT ─── */
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 75vh;
+}
+
+.intro-left {
+  background: var(--cream-warm);
+  padding: 6rem 4rem 6rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.12;
+  color: var(--slate);
+  margin-bottom: 1.5rem;
+}
+
+.section-title em { font-style: italic; color: var(--sage-deep); }
+
+.intro-body {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.intro-metrics {
+  display: flex;
+  gap: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cream-dark);
+}
+
+.metric-num {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--slate);
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.intro-right {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.intro-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Waterfall_landscaping_ideas.jpg/1200px-Waterfall_landscaping_ideas.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* fallback color if image fails */
+.intro-img-fallback {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #3d5c40 0%, #6b8c6e 40%, #c8d9c9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(28, 38, 48, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.5rem;
+  border-left: 3px solid var(--gold);
+}
+
+.caption-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.caption-sub {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 0.15rem;
+}
+
+/* ─── SERVICES ─── */
+.services {
+  padding: 7rem 5rem;
+  background: var(--white);
+}
+
+.services-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+
+.services-header .section-title { margin-bottom: 0; }
+
+.services-intro {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  font-weight: 300;
+  padding-top: 0.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--cream-dark);
+  border: 1px solid var(--cream-dark);
+}
+
+.svc {
+  background: var(--white);
+  padding: 2.5rem 1.75rem;
+  transition: background 0.25s;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.svc::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 0;
+  background: var(--sage-deep);
+  transition: height 0.35s ease;
+}
+
+.svc:hover::before { height: 3px; }
+.svc:hover { background: var(--cream); }
+
+.svc-num {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--cream-dark);
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: color 0.25s;
+}
+
+.svc:hover .svc-num { color: var(--sage-pale); }
+
+.svc h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--slate);
+  margin-bottom: 0.75rem;
+}
+
+.svc p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* ─── SHOWCASE (image + text) ─── */
+.showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+}
+
+.showcase-img {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.showcase-photo {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Stourhead_garden.jpg/1280px-Stourhead_garden.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.showcase-img:hover .showcase-photo { transform: scale(1.03); }
+
+.showcase-text {
+  background: var(--slate);
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.showcase-text .section-eyebrow { color: var(--gold); }
+.showcase-text .section-title { color: var(--white); }
+.showcase-text .section-title em { color: var(--gold-pale); }
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.promise {
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: border-color 0.25s;
+}
+
+.promise:hover { border-color: rgba(184, 146, 58, 0.35); }
+
+.promise-icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.promise h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.promise p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+/* ─── REVIEWS ─── */
+.reviews {
+  padding: 7rem 5rem;
+  background: var(--cream-warm);
+}
+
+.reviews-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.rating-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.rating-big {
+  font-family: var(--serif);
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1;
+}
+
+.rating-stars { font-size: 1rem; color: var(--gold); }
+
+.rating-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.reviews-masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: var(--white);
+  padding: 2rem;
+  border: 1px solid var(--cream-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.review-card:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+  transform: translateY(-3px);
+}
+
+.review-card.featured {
+  background: var(--slate);
+  border-color: var(--slate);
+}
+
+.review-stars { font-size: 0.85rem; color: var(--gold); }
+
+.review-text {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-mid);
+  font-style: italic;
+  flex: 1;
+}
+
+.review-card.featured .review-text { color: rgba(255,255,255,0.8); }
+
+.review-footer-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cream-dark);
+}
+
+.review-card.featured .review-footer-row { border-top-color: rgba(255,255,255,0.1); }
+
+.avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--sage-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.reviewer-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.review-card.featured .reviewer-name { color: var(--white); }
+
+.reviewer-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.review-card.featured .reviewer-meta { color: rgba(255,255,255,0.4); }
+
+.review-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  background: var(--sage-pale);
+  color: var(--sage-deep);
+  margin-bottom: 0.25rem;
+}
+
+/* ─── CONTACT ─── */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+
+.contact-left {
+  background: var(--sage-deep);
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-left::after {
+  content: 'P';
+  position: absolute;
+  right: -1rem;
+  bottom: -3rem;
+  font-family: var(--serif);
+  font-size: 22rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.contact-left .section-eyebrow { color: var(--gold-pale); }
+.contact-left .section-title { color: var(--white); }
+.contact-left .section-title em { color: var(--gold-pale); }
+
+.contact-sub {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  margin-bottom: 3rem;
+  max-width: 400px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cdetail {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cdetail-icon {
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cdetail-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+}
+
+.cdetail-value {
+  font-size: 0.95rem;
+  color: var(--white);
+  font-weight: 400;
+}
+
+.cdetail-value a { color: inherit; text-decoration: none; }
+.cdetail-value a:hover { color: var(--gold-pale); }
+
+/* FORM */
+.contact-right {
+  background: var(--white);
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-heading {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--slate);
+  margin-bottom: 0.4rem;
+}
+
+.form-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.frow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.fg label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.fg input,
+.fg select,
+.fg textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--cream-dark);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  appearance: none;
+  border-radius: 0;
+  font-weight: 300;
+}
+
+.fg input:focus,
+.fg select:focus,
+.fg textarea:focus {
+  border-color: var(--sage);
+  background: var(--white);
+}
+
+.fg textarea { resize: vertical; min-height: 110px; }
+
+.form-submit {
+  width: 100%;
+  padding: 1rem;
+  background: var(--slate);
+  color: var(--white);
+  border: none;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s;
+}
+
+.form-submit:hover { background: var(--sage-deep); transform: translateY(-1px); }
+.form-submit:active { transform: translateY(0); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--slate);
+  padding: 2.5rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer-logo strong { font-weight: 600; color: var(--gold-pale); }
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+/* ─── FLOAT CTA ─── */
+.float-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  background: var(--gold);
+  color: var(--white);
+  padding: 0.9rem 1.75rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.25);
+  transition: all 0.2s;
+}
+
+.float-cta:hover {
+  background: var(--sage-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 36px rgba(0,0,0,0.3);
+}
+
+/* ─── KEYFRAMES ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero-content { padding: 0 1.5rem; max-width: 100%; }
+  .hero-badge { display: none; }
+  .services-strip { padding: 1rem 1.5rem; }
+  .intro { grid-template-columns: 1fr; }
+  .intro-right { min-height: 300px; }
+  .intro-left { padding: 4rem 1.5rem; }
+  .services { padding: 4rem 1.5rem; }
+  .services-header { grid-template-columns: 1fr; gap: 1rem; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .showcase { grid-template-columns: 1fr; }
+  .showcase-img { min-height: 350px; }
+  .showcase-text { padding: 4rem 1.5rem; }
+  .promise-grid { grid-template-columns: 1fr; }
+  .reviews { padding: 4rem 1.5rem; }
+  .reviews-masonry { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
+  .contact-left, .contact-right { padding: 4rem 1.5rem; }
+  .frow { grid-template-columns: 1fr; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- Float CTA -->
+<a href="#contact" class="float-cta">Free Design Consultation</a>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo"><strong>Pendleton</strong> Landscape</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#showcase">Our Work</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Sandy, Utah Landscape Design</span>
+    </div>
+    <h1>Where vision<br>becomes <em>landscape.</em></h1>
+    <p class="hero-sub">Pendleton Landscape transforms your outdoor space with custom design, expert installation, and a personal touch — from concept to completion.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Request Free Consultation</a>
+      <a href="tel:+18015186228" class="btn-outline">☎ (801) 518-6228</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="scroll-label">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+
+  <div class="hero-badge">
+    <div class="badge-rating">4.3</div>
+    <div class="badge-stars">★★★★☆</div>
+    <div class="badge-label">17 Google Reviews</div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="services-strip">
+  <div class="strip-item"><span class="strip-dot">◆</span> Landscape Design</div>
+  <div class="strip-item"><span class="strip-dot">◆</span> Water Features</div>
+  <div class="strip-item"><span class="strip-dot">◆</span> Retaining Walls</div>
+  <div class="strip-item"><span class="strip-dot">◆</span> Pickleball Courts</div>
+  <div class="strip-item"><span class="strip-dot">◆</span> Sod & Turf</div>
+  <div class="strip-item"><span class="strip-dot">◆</span> Custom Walkways</div>
+  <div class="strip-item"><span class="strip-dot">◆</span> Outdoor Lighting</div>
+</div>
+
+<!-- INTRO SPLIT -->
+<section class="intro">
+  <div class="intro-left">
+    <p class="section-eyebrow">Who We Are</p>
+    <h2 class="section-title">Jeremy's <em>vision</em><br>for your yard</h2>
+    <p class="intro-body">Owner Jeremy Pendleton brings a rare combination of design creativity and horticultural expertise to every project. He takes the time to visit your property, listen to your ideas, and present multiple design concepts at various price points — so you're always in control.</p>
+    <p class="intro-body">From water features to full backyard transformations, Pendleton Landscape delivers results that earn compliments from your neighbors.</p>
+    <div class="intro-metrics">
+      <div>
+        <div class="metric-num">4.3</div>
+        <div class="metric-label">Google Rating</div>
+      </div>
+      <div>
+        <div class="metric-num">17+</div>
+        <div class="metric-label">Reviews</div>
+      </div>
+      <div>
+        <div class="metric-num">100%</div>
+        <div class="metric-label">Custom Designs</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-right">
+    <div class="intro-img" id="introImg"></div>
+    <div class="intro-img-fallback" id="introFallback" style="display:none;">
+      <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="100" cy="140" rx="90" ry="40" fill="rgba(255,255,255,0.05)"/>
+        <rect x="88" y="60" width="14" height="80" fill="rgba(255,255,255,0.15)" rx="2"/>
+        <ellipse cx="95" cy="55" rx="35" ry="42" fill="rgba(255,255,255,0.1)"/>
+        <ellipse cx="115" cy="65" rx="28" ry="35" fill="rgba(255,255,255,0.08)"/>
+      </svg>
+    </div>
+    <div class="intro-caption">
+      <div class="caption-title">Custom Water Features</div>
+      <div class="caption-sub">Designed & installed in Sandy, UT</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <p class="section-eyebrow">What We Offer</p>
+      <h2 class="section-title">Full-scope <em>landscape</em><br>design & build</h2>
+    </div>
+    <p class="services-intro">Jeremy and his crew handle everything from the initial design consultation through final installation. Multiple design options and budgets presented upfront — no surprises.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc">
+      <div class="svc-num">01</div>
+      <h3>Custom Landscape Design</h3>
+      <p>Jeremy visits your property personally and creates multiple design concepts tailored to your vision and budget.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-num">02</div>
+      <h3>Water Features</h3>
+      <p>Ponds, waterfalls, and custom water features designed and maintained to enhance your outdoor living space.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-num">03</div>
+      <h3>Retaining Walls</h3>
+      <p>Structural and decorative retaining walls built to Utah's terrain, with clean lines and lasting construction.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-num">04</div>
+      <h3>Sport Courts</h3>
+      <p>Pickleball courts and sport surfaces for residential properties, designed for performance and longevity.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-num">05</div>
+      <h3>Sod & Turf Installation</h3>
+      <p>Grading, resloping, and sod installation for lush, level lawns that look great from day one.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-num">06</div>
+      <h3>Walkways & Steps</h3>
+      <p>Stone, paver, and concrete walkways and outdoor stairs that blend function with curb appeal.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-num">07</div>
+      <h3>Garden & Driveway</h3>
+      <p>Decorative garden beds, driveway landscaping, and planting design that frames your home beautifully.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-num">08</div>
+      <h3>Outdoor Lighting</h3>
+      <p>Integrated landscape lighting to extend the beauty of your yard into the evening hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase" id="showcase">
+  <div class="showcase-img">
+    <div class="showcase-photo" id="showcasePhoto"></div>
+  </div>
+
+  <div class="showcase-text">
+    <p class="section-eyebrow">Our Commitment</p>
+    <h2 class="section-title">Design that <em>earns</em><br>compliments</h2>
+
+    <div class="promise-grid">
+      <div class="promise">
+        <span class="promise-icon">🎨</span>
+        <h4>Personalized Design</h4>
+        <p>Jeremy comes to your home, listens, and creates multiple concepts at different price points.</p>
+      </div>
+      <div class="promise">
+        <span class="promise-icon">👷</span>
+        <h4>Respectful Crews</h4>
+        <p>Professional, courteous teams who complete projects on schedule and treat your property with care.</p>
+      </div>
+      <div class="promise">
+        <span class="promise-icon">🌿</span>
+        <h4>Plant Knowledge</h4>
+        <p>Expert selection of trees and plants suited to Utah's climate and your specific soil conditions.</p>
+      </div>
+      <div class="promise">
+        <span class="promise-icon">💰</span>
+        <h4>Transparent Pricing</h4>
+        <p>Multiple budget options presented upfront. No hidden costs, no surprises at the end of the project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-top">
+    <div>
+      <p class="section-eyebrow">Customer Reviews</p>
+      <div class="rating-display">
+        <span class="rating-big">4.3</span>
+        <span class="rating-stars">★★★★☆</span>
+      </div>
+      <p class="rating-meta">17 verified Google reviews · Sandy, UT</p>
+    </div>
+    <a href="tel:+18015186228" class="btn-primary" style="text-decoration:none; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.9rem 1.75rem;">Call for a Free Quote</a>
+  </div>
+
+  <div class="reviews-masonry">
+
+    <div class="review-card featured">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Absolutely perfect! Design and execution couldn't have turned out better. Jeremy was on it for every hiccup. The whole crew was pleasant to work with and completed on schedule."</p>
+      <div class="review-footer-row">
+        <div class="avatar" style="background: var(--gold);">AE</div>
+        <div>
+          <div class="reviewer-name">Amanda EE</div>
+          <div class="reviewer-meta">Local Guide · 35 reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-tag">Highly Recommended</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Jeremy took the time to come to the house and lay out multiple designs and budgets. Their crews were respectful and quick. You can't go wrong if you choose them."</p>
+      <div class="review-footer-row">
+        <div class="avatar">BP</div>
+        <div>
+          <div class="reviewer-name">Bradly Plowman</div>
+          <div class="reviewer-meta">2 years ago</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Jeremy and his crew did an incredible job on our backyard. The amount of work completed in just a few weeks was nothing short of amazing."</p>
+      <div class="review-footer-row">
+        <div class="avatar" style="background: var(--sage-deep);">KL</div>
+        <div>
+          <div class="reviewer-name">Kevin Laramie</div>
+          <div class="reviewer-meta">11 reviews · 5 photos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"They have great designs, knowledge about trees and plants, and have stood behind their work. We love our yard and get lots of compliments."</p>
+      <div class="review-footer-row">
+        <div class="avatar" style="background: var(--slate-mid);">MM</div>
+        <div>
+          <div class="reviewer-name">Mark Marshall</div>
+          <div class="reviewer-meta">Local Guide · 20 reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Joshua fixed our front yard water feature. He was great to work with and very knowledgeable. I will call his company again next time we need help."</p>
+      <div class="review-footer-row">
+        <div class="avatar" style="background: var(--earth, #7a5c3a);">JB</div>
+        <div>
+          <div class="reviewer-name">Jon Beeler</div>
+          <div class="reviewer-meta">8 reviews · 2 photos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Very responsive, professional and very honest! Pricing was very fair and they went above and beyond. Their work is top notch — strongly recommended."</p>
+      <div class="review-footer-row">
+        <div class="avatar" style="background: var(--sage);">SS</div>
+        <div>
+          <div class="reviewer-name">Sandy Sandberg</div>
+          <div class="reviewer-meta">2 years ago</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left">
+    <p class="section-eyebrow">Get In Touch</p>
+    <h2 class="section-title">Your dream<br>yard starts <em>here.</em></h2>
+    <p class="contact-sub">Request a free design consultation. Jeremy will come to your property, listen to your vision, and present multiple design options with transparent pricing.</p>
+
+    <div class="contact-details">
+      <div class="cdetail">
+        <div class="cdetail-icon">📞</div>
+        <div>
+          <div class="cdetail-label">Phone</div>
+          <div class="cdetail-value"><a href="tel:+18015186228">(801) 518-6228</a></div>
+        </div>
+      </div>
+      <div class="cdetail">
+        <div class="cdetail-icon">📍</div>
+        <div>
+          <div class="cdetail-label">Location</div>
+          <div class="cdetail-value">Sandy, Utah</div>
+        </div>
+      </div>
+      <div class="cdetail">
+        <div class="cdetail-icon">🕐</div>
+        <div>
+          <div class="cdetail-label">Hours</div>
+          <div class="cdetail-value">Opens 8 AM Mon – Fri</div>
+        </div>
+      </div>
+      <div class="cdetail">
+        <div class="cdetail-icon">⭐</div>
+        <div>
+          <div class="cdetail-label">Rating</div>
+          <div class="cdetail-value">4.3 Stars · 17 Google Reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <div class="form-heading">Request a Consultation</div>
+    <p class="form-sub">Free, no-obligation. We'll respond within 1 business day.</p>
+
+    <div class="frow">
+      <div class="fg">
+        <label>First Name</label>
+        <input type="text" placeholder="Jane">
+      </div>
+      <div class="fg">
+        <label>Last Name</label>
+        <input type="text" placeholder="Smith">
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Phone</label>
+      <input type="tel" placeholder="(801) 555-0100">
+    </div>
+
+    <div class="fg">
+      <label>Email</label>
+      <input type="email" placeholder="jane@email.com">
+    </div>
+
+    <div class="fg">
+      <label>Project Type</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>Full Backyard Landscape Design</option>
+        <option>Water Feature Design / Repair</option>
+        <option>Retaining Wall</option>
+        <option>Sport / Pickleball Court</option>
+        <option>Sod & Lawn Installation</option>
+        <option>Walkways & Steps</option>
+        <option>Garden & Planting Design</option>
+        <option>Pond Maintenance</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="fg">
+      <label>Tell us about your project</label>
+      <textarea placeholder="Describe your yard, ideas, approximate size, timeline, etc."></textarea>
+    </div>
+
+    <button class="form-submit" onclick="handleSubmit(this)">Send My Request — It's Free →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><strong>Pendleton</strong> Landscape</div>
+  <div class="footer-copy">© 2024 Pendleton Landscape · Sandy, UT</div>
+  <div class="footer-links">
+    <a href="tel:+18015186228">(801) 518-6228</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Hero bg slow zoom
+  const heroBg = document.getElementById('heroBg');
+  heroBg.style.backgroundImage = "url('https://images.squarespace-cdn.com/content/v1/5de43476f0b4d14870eac88b/1667601600-c90f-4a03-9d3c-7c0ad95aebb4/6.jpg')";
+  setTimeout(() => heroBg.classList.add('loaded'), 100);
+
+  // Showcase image with Utah landscape
+  document.getElementById('showcasePhoto').style.backgroundImage =
+    "url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Waterfall_landscaping_ideas.jpg/1280px-Waterfall_landscaping_ideas.jpg')";
+
+  // Intro image with fallback
+  const introImg = document.getElementById('introImg');
+  const introFallback = document.getElementById('introFallback');
+  const testImg = new Image();
+  testImg.onload = () => {
+    introImg.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Waterfall_landscaping_ideas.jpg/1280px-Waterfall_landscaping_ideas.jpg')";
+  };
+  testImg.onerror = () => {
+    introImg.style.display = 'none';
+    introFallback.style.display = 'flex';
+  };
+  testImg.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Waterfall_landscaping_ideas.jpg/1280px-Waterfall_landscaping_ideas.jpg';
+
+  // Form submit
+  function handleSubmit(btn) {
+    btn.textContent = '✓ Request Received — We\'ll be in touch soon!';
+    btn.style.background = 'var(--sage-deep)';
+    btn.disabled = true;
+  }
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.svc, .review-card, .promise, .cdetail, .metric-num').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
